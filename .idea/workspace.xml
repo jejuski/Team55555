@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a78a76d0-d149-4774-9f37-95fe31ea2eca" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Team5.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Team5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Team5.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
@@ -44,6 +40,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectId" id="2ClJ9HhumU2CKomTxxM9N8eFMfG" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -63,7 +62,10 @@
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
-  <component name="RunManager" selected="JavaScript 디버그.login.html">
+  <component name="RunManager" selected="JavaScript 디버그.detailpage.html">
+    <configuration name="detailpage.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Team5/templates/detailpage.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="login.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Team5/templates/login.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -91,6 +93,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript 디버그.detailpage.html" />
         <item itemvalue="JavaScript 디버그.login.html" />
       </list>
     </recent_temporary>
@@ -105,7 +108,7 @@
       <updated>1659371084417</updated>
       <workItem from="1659371092577" duration="350000" />
       <workItem from="1659420481980" duration="317000" />
-      <workItem from="1659425215042" duration="3246000" />
+      <workItem from="1659425215042" duration="6183000" />
     </task>
     <task id="LOCAL-00001" summary="app.py commit">
       <created>1659420757735</created>

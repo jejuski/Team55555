@@ -186,4 +186,32 @@ def api_valid():
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5000, debug=True)
 
-    ------------------------------------------------------------------------------------------------
+    ------------------------------------------상세페이지------------------------------------------------------
+from flask import Flask, render_template, request, jsonify
+app = Flask(__name__)
+from pymongo import MongoClient
+import certifi
+ca = certifi.where()
+client = MongoClient('mongodb://test:sparta@cluster0-shard-00-00.hxcfk.mongodb.net:27017,cluster0-shard-00-01.hxcfk.mongodb.net:27017,cluster0-shard-00-02.hxcfk.mongodb.net:27017/?ssl=true&replicaSet=atlas-atkn0l-shard-0&authSource=admin&retryWrites=true&w=majority', tlsCAFile=ca)
+db = client.dbsparta
+@app.route('/')
+def home():
+    return render_template('index.html')
+@app.route("/review", methods=["GET"])
+def review_get():
+    review_list = list(db.review.find({}, {'_id': False}))
+    return jsonify({'reviewList':review_list})
+@app.route("/review", methods=["POST"])
+def review_post():
+    nickname_receive = request.form['nickname_give']
+    star_receive = request.form['star_give']
+    comment_receive = request.form['comment_give']
+    doc = {
+        'nickname': nickname_receive,
+        'star': star_receive,
+        'comment': comment_receive
+    }
+    db.review.insert_one(doc)
+    return jsonify({'msg':'POST 연결 완료!'})
+if __name__ == '__main__':
+   app.run('0.0.0.0', port=5000, debug=True)
