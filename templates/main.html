@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        body{
+          margin: 0;
+          padding: 0;
+        }
+        .search_box{
+          width: 60%;
+          margin: 10px auto;
+        }
+        .header{
+          background: #2ECC71;
+          overflow: hidden;
+          padding: 20px;
+          text-align: center;
+        }
+        .header h1{
+          color: white;
+          margin: 0;
+          margin-bottom: 8px;
+        }
+        #value{
+          border: none;
+          background: #fff;
+          padding: 6px;
+          font-size: 18px;
+          width: 80%;
+          border-radius: 6px;
+        }
+        #value:focus{
+          outline: none;
+        }
+        .container{
+          background: #D5F5E3;
+          padding: 1%;
+          opacity: 0.7;
+
+          display: flex;
+            flex-wrap: wrap;
+        }
+        .item{
+          margin: 3% 0px;
+          display: flex;
+          align-items: center;
+
+            padding: 10px;
+            margin: 5px;
+            background: #2ECC71;
+            border-radius: 15px;
+        }
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .container2{
+          background: #D5F5E3;
+          width: 90%;
+          margin: 10px auto;
+
+          display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            mise_info()
+        })
+
+        function mise_info() {
+            $.ajax({
+                type: "GET",
+                url: "http://openapi.seoul.go.kr:8088/6d4d776b466c656533356a4b4b5872/json/RealtimeCityAir/1/99",
+                data: {},
+                success: function (response) {
+                    let rows = response["RealtimeCityAir"]["row"];
+
+                    for (let i = 0; i < rows.length; i++) {
+                        let gu_name = rows[i]["MSRSTE_NM"]
+                        let gu_mise = rows[i]["IDEX_MVL"]
+
+                            let temp_html = `<li>${gu_name}: ${gu_mise}</li>`
+                            $("#gu-list").append(temp_html)
+
+                    }
+                }
+            })
+        }
+
+      function filter() {
+        let value, name, item, i;
+
+        value = document.getElementById("value").value.toUpperCase();
+        item = document.getElementsByClassName("item");
+
+        for (i = 0; i < item.length; i++){
+          name = item[i].getElementsByClassName("name");
+          if (name[0].innerHTML.toUpperCase().indexOf(value) > -1){
+            item[i].style.display = "flex";
+          } else {
+            item[i].style.display = "none";
+          }
+        }
+      }
+    </script>
+</head>
+<body>
+    <div class="search_box">
+      <div class="header">
+        <h1>2호선에서 살아남기</h1>
+        <input onkeyup="filter()" type="text" id="value" placeholder="역 이름 검색">
+      </div>
+
+      <div class="container">
+        <div class="item" onclick="window.location.href = '/gangnam'">
+          <span class="name">강남</span>
+        </div>
+
+        <div class="item" onclick="window.location.href = '/yeoksam'">
+          <span class="name">역삼</span>
+        </div>
+
+        <div class="item" onclick="window.location.href = '/seolleung'">
+          <span class="name">선릉</span>
+        </div>
+
+        <div class="item">
+          <span class="name" onclick="window.location.href = '/samseong'">삼성</span>
+        </div>
+
+        <div class="item">
+          <span class="name" onclick="window.location.href = '/sports'">종합운동장</span>
+        </div>
+
+        <div class="item">
+          <span class="name" onclick="window.location.href = '/jamsil_sn'">잠실새내</span>
+        </div>
+
+        <div class="item">
+          <span class="name" onclick="window.location.href = '/jamsil'">잠실</span>
+        </div>
+
+          <div class="item">
+          <span class="name" onclick="window.location.href = '/jamsil'">잠실나루</span>
+        </div>
+
+          <div class="item">
+          <span class="name" onclick="window.location.href = '/jamsil'">강변</span>
+        </div>
+
+          <div class="item">
+          <span class="name" onclick="window.location.href = '/jamsil'">구의</span>
+        </div>
+
+          <div class="item">
+          <span class="name" onclick="window.location.href = '/jamsil'">건대입구</span>
+        </div>
+
+          <div class="item">
+          <span class="name" onclick="window.location.href = '/jamsil'">성수</span>
+        </div>
+
+          <div class="item">
+          <span class="name" onclick="window.location.href = '/jamsil'">뚝섬</span>
+       </div>
+
+          <div class="item">
+          <span class="name" onclick="window.location.href = '/jamsil'">한양대</span>
+        </div>
+
+          <div class="item">
+          <span class="name" onclick="window.location.href = '/jamsil'">왕십리</span>
+        </div>
+      </div>
+    </div>
+    <div class="container2">
+        <ul id="gu-list"></ul>
+        <img id="bg_img" src="../static/main.png">
+    </div>
+</body>
+</html>
