@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <!-- Webpage Title -->
     <title>2호선에서 살아남기</title>
@@ -33,7 +33,7 @@
     </style>
     <script>
       // 간단한 회원가입 함수입니다.
-      // 아이디, 비밀번호, 닉네임을 받아 DB에 저장합니다.
+      // 아이디, 비밀번호, 비밀번호재확인을 받아 DB에 저장합니다.
       function register() {
         $.ajax({
           type: 'POST',
@@ -41,12 +41,13 @@
           data: {
             id_give: $('#userid').val(),
             pw_give: $('#userpw').val(),
-            pw2_give: $('#userpw2').val(),
+            nickname_give: $('#usernick').val(),
           },
           success: function (response) {
             if (response['result'] == 'success') {
               alert('회원가입이 완료되었습니다.');
-              window.location.href = '/login';
+              // window.location.href = '/login';
+              window.location.reload();
             } else {
               alert(response['msg']);
             }
@@ -70,7 +71,8 @@
               </div>
             </div>
           </div>
-          <button class="button is-success ml-2">중복확인</button>
+          <button class="button is-success ml-2" id="uidcheck">중복확인</button>
+          <span id="check_result"></span>
         </div>
         <div class="field is-horizontal">
           <div class="field-label is-normal">
@@ -86,12 +88,12 @@
         </div>
         <div class="field is-horizontal">
           <div class="field-label is-normal">
-            <label class="label" for="usernick">비밀번호 재확인</label>
+            <label class="label" for="userpw2">닉네임</label>
           </div>
           <div class="field-body">
             <div class="field">
               <div class="control">
-                <input type="password" class="input" id="userpw2" placeholder="사용하실 비밀번호를 다시 입력하세요." />
+                <input type="text" class="input" id="usernick" placeholder="사용하실 닉네임을 입력하세요." />
               </div>
             </div>
           </div>
