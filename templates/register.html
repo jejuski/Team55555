@@ -13,6 +13,7 @@
     <!-- JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
     <style>
       label {
         text-align: center;
@@ -32,31 +33,44 @@
       }
     </style>
     <script>
-      // 간단한 회원가입 함수입니다.
-      // 아이디, 비밀번호, 닉네임을 받아 DB에 저장합니다.
+      function double(){
+        $.ajax({
+          type: 'GET',
+          url: '/double',
+          data: {},
+          success: function (response) {
+            let id = $('#userid').val()
+            let rows = response['memberList']
+            for (let i = 0; i < rows.length; i++) {
+              let member_id = rows[i]['userId']
+              if (id == member_id)
+                alert('이미 존재하는 아이디입니다. 다시 입력하세요');
+              if(i == rows.length -1 && id != member_id)
+                alert('사용가능한 아이디입니다.');
+            }
+          }
+        });
+      }
+
       function register() {
         $.ajax({
           type: 'POST',
-          url: '/api/register',
+          url: '/join',
           data: {
-            id_give: $('#userid').val(),
+            userId_give: $('#userid').val(),
             pw_give: $('#userpw').val(),
             nickname_give: $('#usernick').val(),
           },
           success: function (response) {
-            if (response['result'] == 'success') {
-              alert('회원가입이 완료되었습니다.');
-              // window.location.href = '/login';
               window.location.reload();
-            } else {
               alert(response['msg']);
             }
-          },
         });
       }
     </script>
   </head>
   <body>
+
     <div class="section has-text-centered">
       <h1 class="title">회원가입</h1>
       <div class="container">
@@ -71,7 +85,7 @@
               </div>
             </div>
           </div>
-          <button class="button is-success ml-2" id="uidcheck">중복확인</button>
+          <button class="button is-success ml-2" id="uidcheck" onclick="double()">중복확인</button>
           <span id="check_result"></span>
         </div>
         <div class="field is-horizontal">
