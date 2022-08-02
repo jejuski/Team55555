@@ -60,7 +60,6 @@ def register():
 def api_register():
     id_receive = request.form['id_give']
     pw_receive = request.form['pw_give']
-    pw_receive = request.form['pw_give']
     nickname_receive = request.form['nickname_give']
 
     pw_hash = hashlib.sha256(pw_receive.encode('utf-8')).hexdigest()
