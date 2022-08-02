@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a78a76d0-d149-4774-9f37-95fe31ea2eca" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Team5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Team5.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +105,7 @@
       <updated>1659371084417</updated>
       <workItem from="1659371092577" duration="350000" />
       <workItem from="1659420481980" duration="317000" />
-      <workItem from="1659425215042" duration="6183000" />
+      <workItem from="1659425215042" duration="7660000" />
     </task>
     <task id="LOCAL-00001" summary="app.py commit">
       <created>1659420757735</created>
