@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a78a76d0-d149-4774-9f37-95fe31ea2eca" name="변경" comment="">
+    <list default="true" id="6e66c147-67cc-4007-b4ad-2dbaf54858ab" name="변경" comment="app.py commit">
       <change beforePath="$PROJECT_DIR$/.idea/shelf/2022_08_03_11_28_AM__________.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/2022_08_03_11_28_AM__________.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/2022_08_03_11_28_AM__________1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/2022_08_03_11_28_AM__________1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/2022_08_03_3_26_PM__________.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/2022_08_03_3_26_PM__________.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,15 +49,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "node.js.selected.package.tslint": "(autodetect)"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/static" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.detailpage.html">
+  <component name="RunManager" selected="JavaScript 디버그.detailpage.html">
     <configuration name="detailpage.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Team5/templates/detailpage.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
