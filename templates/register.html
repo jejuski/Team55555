@@ -1,119 +1,157 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
+<head>
     <!-- Webpage Title -->
     <title>2호선에서 살아남기</title>
 
     <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 
     <!-- Bulma CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"/>
     <!-- JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 
     <style>
-      label {
-        text-align: center;
-      }
-      .section {
-        margin: 200px auto;
-        width: 100%;
-        max-width: 500px;
-        border: 1px solid green;
-        border-radius: 10px;
-      }
-      .idbox {
-        margin-left: 10px;
-      }
-      .idinputbox {
-        margin-left: 10px;
-      }
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
+
+        * {
+            color: #fff;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        button {
+            background-color: #00a000 !important;
+        }
+
+        html {
+            background-color: #00a000;
+        }
+
+        label {
+            text-align: center;
+        {#color: #fff!important;#}
+        }
+
+        .wrap {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .main_title {
+            font-size: 50px;
+            font-weight: bold;
+            color: #fff;
+            /*background-size: contain;*/
+
+        }
+
+        .section {
+            margin: 50px auto;
+            width: 100%;
+            max-width: 500px;
+            border: 1px solid green;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .idbox {
+            margin-left: 10px;
+        }
+
+        .idinputbox {
+            margin-left: 10px;
+        }
     </style>
     <script>
-      function double(){
-        $.ajax({
-          type: 'GET',
-          url: '/double',
-          data: {},
-          success: function (response) {
-            let id = $('#userid').val()
-            let rows = response['memberList']
-            for (let i = 0; i < rows.length; i++) {
-              let member_id = rows[i]['userId']
-              if (id == member_id)
-                alert('이미 존재하는 아이디입니다. 다시 입력하세요');
-              if(i == rows.length -1 && id != member_id)
-                alert('사용가능한 아이디입니다.');
-            }
-          }
-        });
-      }
+        function double() {
+            $.ajax({
+                type: 'GET',
+                url: '/double',
+                data: {},
+                success: function (response) {
+                    let id = $('#userid').val()
+                    let rows = response['memberList']
+                    for (let i = 0; i < rows.length; i++) {
+                        let member_id = rows[i]['userId']
+                        if (id == member_id)
+                            alert('이미 존재하는 아이디입니다. 다시 입력하세요');
+                        if (i == rows.length - 1 && id != member_id)
+                            alert('사용가능한 아이디입니다.');
+                        if
+                    }
+                }
+            });
+        }
 
-      function register() {
-        $.ajax({
-          type: 'POST',
-          url: '/join',
-          data: {
-            userId_give: $('#userid').val(),
-            pw_give: $('#userpw').val(),
-            nickname_give: $('#usernick').val(),
-          },
-          success: function (response) {
-              window.location.reload();
-              alert(response['msg']);
-            }
-        });
-      }
+        function register() {
+            $.ajax({
+                type: 'POST',
+                url: '/join',
+                data: {
+                    userId_give: $('#userid').val(),
+                    pw_give: $('#userpw').val(),
+                    nickname_give: $('#usernick').val(),
+                },
+                success: function (response) {
+                    window.location.reload();
+                    alert(response['msg']);
+                }
+            });
+        }
     </script>
-  </head>
-  <body>
-
+</head>
+<body>
+<div class="wrap">
+    <h1 class="main_title">지하철에서 살아남기</h1>
     <div class="section has-text-centered">
-      <h1 class="title">회원가입</h1>
-      <div class="container">
-        <div class="field is-horizontal idbox">
-          <div class="field-label is-normal">
-            <label class="label" for="userid">아이디</label>
-          </div>
-          <div class="field-body idinputbox">
-            <div class="field">
-              <div class="control">
-                <input type="text" class="input" id="userid" aria-describedby="emailHelp" placeholder="사용하실 ID를 입력하세요." />
-              </div>
+        <h2 class="title">회원가입</h2>
+        <div class="container">
+            <div class="field is-horizontal idbox">
+                <div class="field-label is-normal">
+                    <label class="label" for="userid">아이디</label>
+                </div>
+                <div class="field-body idinputbox">
+                    <div class="field">
+                        <div class="control">
+                            <input type="text" class="input" id="userid" aria-describedby="emailHelp"
+                                   placeholder="사용하실 ID를 입력하세요."/>
+                        </div>
+                    </div>
+                </div>
+                <button class="button is-success ml-2" id="uidcheck" onclick="double()">중복확인</button>
+                <span id="check_result"></span>
             </div>
-          </div>
-          <button class="button is-success ml-2" id="uidcheck" onclick="double()">중복확인</button>
-          <span id="check_result"></span>
-        </div>
-        <div class="field is-horizontal">
-          <div class="field-label is-normal">
-            <label class="label" for="userpw">비밀번호</label>
-          </div>
-          <div class="field-body">
-            <div class="field">
-              <div class="control">
-                <input type="password" class="input" id="userpw" placeholder="사용하실 비밀번호를 입력하세요." />
-              </div>
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label" for="userpw">비밀번호</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <input type="password" class="input" id="userpw" placeholder="사용하실 비밀번호를 입력하세요."/>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="field is-horizontal">
-          <div class="field-label is-normal">
-            <label class="label" for="usernick">닉네임</label>
-          </div>
-          <div class="field-body">
-            <div class="field">
-              <div class="control">
-                <input type="text" class="input" id="usernick" placeholder="사용하실 닉네임을 입력하세요." />
-              </div>
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label" for="usernick">닉네임</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <input type="text" class="input" id="usernick" placeholder="사용하실 닉네임을 입력하세요."/>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+            <button class="button is-success" onclick="register()">회원가입</button>
         </div>
-        <button class="button is-success" onclick="register()">회원가입</button>
-      </div>
     </div>
-  </body>
+</div>
+</body>
 </html>
