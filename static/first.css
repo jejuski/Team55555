@@ -1,0 +1,36 @@
+body{
+    background-image:linear-gradient(
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3)
+      ),
+    url('https://blog.touchclass.com/wp-content/uploads/2017/09/ad11-1.png');
+}
+
+.div0{
+    width: 70%;
+    height: 600px;
+    margin-top: 60px;
+    display:flex;
+    border: solid 0.6px dimgray;
+    margin-left: 60px;
+    background-color:white;
+}
+.div1{
+    background-color: darkgreen;
+    width: 400px;
+    height: 600px;
+    opacity:0.9;
+}
+#div1_1{
+    margin-top: 80px;
+}
+
+.div2{
+    margin-top: 100px;
+    margin-left:50px;
+}
+
+.logo{
+    text-align:left;
+    margin-left:10px;
+}
