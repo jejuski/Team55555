@@ -46,6 +46,12 @@ body {
     margin: 5px;
     background: #2ECC71;
     border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.item:hover {
+    background: green;
 }
 
 .name {

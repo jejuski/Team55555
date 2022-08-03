@@ -28,16 +28,16 @@ function show_info(num) {
     let info_html = ``;
     switch (String(num)) {
         case "1":
-            $(".info_div").hide();
-            $('#info01').show();
+            $(".info_div").hide(500);
+            $('#info01').show(1000);
             break;
         case "2":
-            $(".info_div").hide();
-            $('#info02').show();
+            $(".info_div").hide(500);
+            $('#info02').show(1000);
             break;
         case "3":
-            $(".info_div").hide();
-            $('#info03').show();
+            $(".info_div").hide(500);
+            $('#info03').show(1000);
             break;
         default:
             alert('준비중입니다!');
