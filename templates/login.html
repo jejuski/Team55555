@@ -1,80 +1,21 @@
 <!doctype html>
 <html lang="en">
     <head>
+        <title>지하철에서 살아남기</title>
 
-        <!-- Webpage Title -->
-        <title>2호선에서 살아남기</title>
-
-        <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <style>
-            html{
-                background-color:#00a000 !important;
-            }
-            .section {
-                margin: 200px auto;
-                width: 100%;
-                max-width: 500px;
-                border: 1px solid green;
-                border-radius: 10px;
-                background-color: #fff;
-            }
+        <script src="/static/login.js"></script>
+        <link rel="stylesheet" type="text/css" href="/static/login.css">
 
-            .button {
-                background-color: #00a000 !important;
-            }
-            .title{
-                width: 100%;
-                margin-top: 100px;
-                margin-right: 0px;
-                margin-left: 0px;
-                text-align: center;
-
-                color: white;
-            }
-
-        </style>
-
-        <!-- Bulma CSS -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-        <!-- JS -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
-
-
-        <script>
-            {% if msg %}
-                alert("{{ msg }}")
-            {% endif %}
-            function login() {
-                $.ajax({
-                    type: "POST",
-                    url: "/api/login",
-                    data: {id_give: $('#userid').val(), pw_give: $('#userpw').val()},
-                    success: function (response) {
-                        if (response['result'] == 'success') {
-                            $.cookie('mytoken', response['token']);
-
-                            alert('로그인 완료!')
-                            window.location.href = '/'
-                        } else {
-                            alert(response['msg'])
-                        }
-                    }
-                })
-            }
-
-        </script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
 
     </head>
     <body>
-    <div class="title">
-        <h1>지하철에서 살아남기</h1>
-    </div>
+        <h1 class="main_title">지하철에서 살아남기</h1>
         <div class="section has-text-centered">
-                <h1 class="title">로그인</h1>
+                <h2 class="title">로그인</h2>
                 <div class="container" style="width:80%">
                     <div class="field is-horizontal">
                         <div class="field-label is-normal">
