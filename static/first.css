@@ -1,7 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
+@font-face {
+    font-family: 'MapoPeacefull';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoPeacefullA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 * {
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'MapoPeacefull',sans-serif;
 }
 
 body {
@@ -34,10 +39,11 @@ bg {
 video {
     z-index: -1;
     width: 100vw;
+    overflow: hidden;
 }
 
 .div0 {
-    width: 80%;
+    width: 60%;
     height: 600px;
     display: flex;
     /*border: solid 0.6px dimgray;*/
@@ -65,13 +71,10 @@ video {
     width: 70%;
 }
 
-.div2 iframe {
-    width: 80%;
-    margin-top: 50px;
-}
 
 .logo img {
     text-align: center;
     margin: 25px 0;
-    width: 60%;
+    width: 35%;
+
 }

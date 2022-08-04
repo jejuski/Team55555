@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="utf-8">
@@ -8,84 +8,92 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
-    <script src="../static/index.js"></script>
-    <link rel="stylesheet" href="../static/index.css">
+    <script src="/static/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/index.css">
 
     <title>지하철역에서 살아남기</title>
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 </head>
 
 <body>
-<div class="title" id="main_title"></div>
-<div class="info">
-    <div class="btn-group" role="group" aria-label="Basic outlined example">
-        <button type="button" class="btn btn-outline-primary" onclick="display_info()">역 정보</button>
-        <button type="button" class="btn btn-outline-primary" onclick="display_review()">리뷰</button>
+<div class="navbox">
+    <div class="nick">
+        {{ nickname }} 님 환영합니다.
     </div>
+    <div class="main">
+        <button onclick="window.location.href='/'">검색하기</button>
+    </div>
+    <div class="logout">
+        <button onclick="logout()">로그아웃</button>
+    </div>
+</div>
 
-    <div id="station_info">
-        <center>
-            <div class="card text-white bg-success mb-3" style="max-width: 300px;">
-                <div class="card-header" id="main_title2"></div>
-                <div class="card-body">
-                    <h5 class="card-title">주요 편의시설</h5>
-                    <p class="card-text" id="toilet">역사 내 화장실이 위치 여부 작성</p>
-                    <p class="card-text" id="disabled">장애인 편의시설 여부 작성</p>
+<div class="wrap">
+    <div class="title" id="main_title">
+    </div>
+    <div class="info">
+        <div class="btn-group" role="group" aria-label="Basic outlined example">
+            <button type="button" class="btn btn-outline-primary" onclick="display_info()">역 정보</button>
+            <button type="button" class="btn btn-outline-primary" onclick="display_review()">리뷰</button>
+        </div>
+
+        <div id="station_info">
+        </div>
+        <div id="station_info2">
+            <div class="card">
+                <div class="card-header">
+                    주변 시설 더 자세히 살펴보기🕵
                 </div>
-        </center>
-    </div>
-    <div id="station_info2">
-        <div class="card">
-            <div class="card-header">
-                주변 시설 더 자세히 살펴보기🕵
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p>원하는 곳을 검색해보세요🚃</p>
+                        <footer class="blockquote-footer">카카오 지도로 주변 맛집, 편의 시설 검색하기
+                            <center><cite title="Source Title">
+                                <iframe src="https://map.kakao.com/"
+                                        width="600" height="350" style="border:0;"></iframe>
+                            </cite></center>
+                        </footer>
+                    </blockquote>
+                </div>
             </div>
-            <div class="card-body">
-                <blockquote class="blockquote mb-0">
-                    <p>원하는 곳을 검색해보세요🚃</p>
-                    <footer class="blockquote-footer">카카오 지도로 주변 맛집, 편의 시설 검색하기
-                        <center><cite title="Source Title">
-                            <iframe src="https://map.kakao.com/"
-                                    width="600" height="350" style="border:0;"></iframe>
-                        </cite></center>
-                    </footer>
-                </blockquote>
+        </div>
+
+        <div class="review" id="write_review" style="display:none">
+            <div class="mypost" id="post-box">
+                <div class="form-floating mb-3">
+                    <input id="nickname" class="form-control" placeholder="닉네임">
+                    <label>닉네임</label>
+                </div>
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupSelect01">별점</label>
+                    <select class="form-select" id="star">
+                        <option selected>-- 선택하기 --</option>
+                        <option value="1">⭐</option>
+                        <option value="2">⭐⭐</option>
+                        <option value="3">⭐⭐⭐</option>
+                        <option value="4">⭐⭐⭐⭐</option>
+                        <option value="5">⭐⭐⭐⭐⭐</option>
+                    </select>
+                </div>
+                <div class="form-floating">
+                    <textarea id="comment" class="form-control" placeholder="Leave a comment here"></textarea>
+                    <label for="floatingTextarea2">앱 리뷰 한마디만 작성해주세요:)</label>
+                </div>
+                <div class="mybtns">
+                    <button onclick="posting()" type="button" class="btn btn-dark" id="btn_submit">등록하기</button>
+                </div>
+            </div>
+            <div class="mycards" id="review">
+                <div id="cards-box">
+
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="review" id="write_review" style="display:none">
-        <div class="mypost" id="post-box">
-            <div class="form-floating mb-3">
-                <input id="nickname" class="form-control" placeholder="닉네임">
-                <label>닉네임</label>
-            </div>
-            <div class="input-group mb-3">
-                <label class="input-group-text" for="inputGroupSelect01">별점</label>
-                <select class="form-select" id="star">
-                    <option selected>-- 선택하기 --</option>
-                    <option value="1">⭐</option>
-                    <option value="2">⭐⭐</option>
-                    <option value="3">⭐⭐⭐</option>
-                    <option value="4">⭐⭐⭐⭐</option>
-                    <option value="5">⭐⭐⭐⭐⭐</option>
-                </select>
-            </div>
-            <div class="form-floating">
-                <textarea id="comment" class="form-control" placeholder="Leave a comment here"></textarea>
-                <label for="floatingTextarea2">앱 리뷰 한마디만 작성해주세요:)</label>
-            </div>
-            <div class="mybtns">
-                <button onclick="posting()" type="button" class="btn btn-dark">등록하기</button>
-            </div>
-        </div>
-        <div class="mycards" id="review">
-            <div id="cards-box">
-
-            </div>
-        </div>
-    </div>
 </body>
 </html>

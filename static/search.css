@@ -11,7 +11,7 @@
 
 body {
     background-color: lightgrey;
-
+    position: relative;
 }
 
 .navbox {
@@ -42,14 +42,10 @@ body {
     background-color: #4b8f4d;
     color: #fff;
 }
-.wrap {
-    position: relative;
-    top: 35px;
-    left: 0;
-
-}
 
 .title {
+    position: relative;
+
     width: 100%;
     height: 200px;
 
@@ -63,6 +59,22 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.wrap {
+    position: relative;
+    top: 35px;
+    left: 0;
+    margin-bottom: 100px;
+}
+
+#btn_search {
+    background-color: #4b8f4d;
+    color: #fff;
+}
+#searchbox{
+    width: 60% !important;
+    margin-top: 50px;
 }
 .info {
     width: 100%;
@@ -147,9 +159,12 @@ body {
     max-width: 1200px;
 }
 
-#btn_submit {
-    background-color: #4b8f4d;
-    color: #fff;
-    border: transparent;
-    border-radius: 7px;
+#bg_img {
+    max-width: 100%;
+}
+
+.container2 {
+    margin: auto;
+    text-align: center;
+    width: 100%;
 }

@@ -1,27 +1,32 @@
-register.css
-
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
+@font-face {
+    font-family: 'MapoPeacefull';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoPeacefullA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 * {
     color: #fff;
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'MapoPeacefull',sans-serif;
 }
-
 button {
-    /*background-color: #00a000 !important;*/
+    background-color: #4b8f4d !important;
+}
+html {
+    background-color: #eee;
 }
 
-/*html {*/
-/*    background-color: #00a000;*/
-/*}*/
 
 label {
     text-align: center;
+    width: 100%;
+    margin-left: 5px;
+    line-height: 2.5;
 }
-
 input {
     width: 300px !important;
     margin: 5px 0;
+    display: inline-block;
 }
 
 .wrap {
@@ -36,20 +41,24 @@ input {
 }
 
 .section {
-    padding: 0;
-    margin: auto;
+    padding: 40px;
+    margin: 200px auto;
     width: 100%;
-    max-width: 480px;
-    /*border: 1px solid green;*/
-    /*border-radius: 10px;*/
+    max-width: 600px;
+    border: 1px solid green;
+    border-radius: 10px;
     background-color: #fff;
-    /*box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);*/
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.3);
 }
-
-.idbox {
-    /*margin-left: 10px;*/
+.control{
+    width: 300px;
 }
+#userid{
+    margin-left: 15px;
+}
+#uidcheck{
 
+}
 .idinputbox {
-    /*margin-left: 10px;*/
+    margin-left: 5px;
 }
