@@ -8,10 +8,6 @@
 button {
     background-color: #4b8f4d !important;
 }
-button:hover{
-    background-color: #6ACC6D;!important;
-}
-
 html {
     background-color: #eee;
 }
