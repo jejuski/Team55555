@@ -12,8 +12,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
-    <script src="/static/index.js"></script>
-    <link rel="stylesheet" type="text/css" href="/static/index.css">
+    <script src="/static/js/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
 
     <title>지하철역에서 살아남기</title>
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
@@ -62,16 +62,17 @@
             </div>
         </div>
 
-        <div class="review" id="write_review" style="display:none">
+        <div class="review" id="write_review" style="display: none">
+
             <div class="mypost" id="post-box">
                 <div class="form-floating mb-3">
-                    <input id="nickname" class="form-control" placeholder="닉네임">
+                    <input type="text" id="nickname" class="form-control" value="{{ nickname }}" disabled placeholder="닉네임">
                     <label>닉네임</label>
                 </div>
                 <div class="input-group mb-3">
                     <label class="input-group-text" for="inputGroupSelect01">별점</label>
                     <select class="form-select" id="star">
-                        <option selected>-- 선택하기 --</option>
+                        <option value="">-- 선택하기 --</option>
                         <option value="1">⭐</option>
                         <option value="2">⭐⭐</option>
                         <option value="3">⭐⭐⭐</option>
@@ -81,15 +82,15 @@
                 </div>
                 <div class="form-floating">
                     <textarea id="comment" class="form-control" placeholder="Leave a comment here"></textarea>
-                    <label for="floatingTextarea2">앱 리뷰 한마디만 작성해주세요:)</label>
+                    <label for="floatingTextarea2">앱 리뷰 한마디만 작성해주세요 :)</label>
                 </div>
                 <div class="mybtns">
                     <button onclick="posting()" type="button" class="btn btn-dark" id="btn_submit">등록하기</button>
                 </div>
             </div>
+
             <div class="mycards" id="review">
                 <div id="cards-box">
-
                 </div>
             </div>
         </div>
