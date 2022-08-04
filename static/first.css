@@ -34,10 +34,11 @@ bg {
 video {
     z-index: -1;
     width: 100vw;
+    overflow: hidden;
 }
 
 .div0 {
-    width: 80%;
+    width: 60%;
     height: 600px;
     display: flex;
     /*border: solid 0.6px dimgray;*/
@@ -65,13 +66,10 @@ video {
     width: 70%;
 }
 
-.div2 iframe {
-    width: 80%;
-    margin-top: 50px;
-}
 
 .logo img {
     text-align: center;
-    margin: 25px 0;
-    width: 60%;
+    margin: 10px 0;
+    width: 50%;
+
 }
