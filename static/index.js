@@ -76,6 +76,7 @@
 }
 
 function showInfo() {
+     let station_param = getParameter("station_name")
      $.ajax({
          type: 'GET',
          url: '/index/info',
@@ -89,17 +90,19 @@ function showInfo() {
                  let operate = rows[i]['operate']
                  let toilet = rows[i]['toilet']
 
-                 let temp_html = ` <div class="card text-white bg-success mb-3" style="max-width: 300px;">
-                                      <div class="card-header">${station}</div>
-                                      <div class="card-body">
-                                      <h5 class="card-title">주요 편의시설</h5>
-                                      <p class="card-text" id="address">${address}</p>
-                                      <p class="card-text" id="tel">${tel}</p>
-                                      <p class="card-text" id="operate">${operate}</p>
-                                      <p class="card-text" id="toilet">${toilet}</p>
-                                 </div>`
+                 if(station == station_param) {
+                     let temp_html = ` <div class="card text-white bg-success mb-3" style="max-width: 300px;">
+                                          <div class="card-header">${station}</div>
+                                          <div class="card-body">
+                                          <h5 class="card-title">주요 편의시설</h5>
+                                          <p class="card-text" id="address">${address}</p>
+                                          <p class="card-text" id="tel">${tel}</p>
+                                          <p class="card-text" id="operate">${operate}</p>
+                                          <p class="card-text" id="toilet">${toilet}</p>
+                                     </div>`
 
-                 $('#station_info').append(temp_html)
+                     $('#station_info').append(temp_html)
+                 }
              }
          }
      })

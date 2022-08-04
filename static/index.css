@@ -1,106 +1,148 @@
-    * {
-                font-family: 'Gowun Dodum', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
 
-        }
+* {
+    font-family: 'Noto Sans KR', sans-serif;
 
-        body{
-            background-color: lightgrey;
-        }
+}
 
-        .title{
-            width: 100%;
-            height: 200px;
+body {
+    background-color: lightgrey;
 
-            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('http://www.ntoday.co.kr/news/photo/201812/64416_35312_1856.jpg');
-            background-position: center;
-            background-size: cover;
+}
 
-            color: white;
+.navbox {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    padding-top: 10px;
+    background-color: #fff;
+}
 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+.nick {
+    float: left;
+}
 
+.navbox button {
+    float: right;
+    border: transparent;
+    margin-right: 5px;
+    border-radius: 7px;
+    padding: 5px 10px;
+    background-color: #4b8f4d;
+    color: #fff;
+}
 
-        .info{
-             width: 100%;
+.wrap {
+    position: relative;
+    top: 35px;
+    left: 0;
 
-             background-position: center;
-             background-size: cover;
-             background-color: lightgrey;
+}
 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+.title {
+    width: 100%;
+    height: 200px;
 
-        .btn-group > button {
-            width: 250px;
-            height: 50px;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('http://www.ntoday.co.kr/news/photo/201812/64416_35312_1856.jpg');
+    background-position: center;
+    background-size: cover;
 
-            background-color: transparent;
-            color: forestgreen;
+    color: white;
 
-            border-radius: 50px;
-            border-color: forestgreen;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.info {
+    width: 100%;
 
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
+    background-position: center;
+    background-size: cover;
+    background-color: lightgrey;
 
-        .btn-group > button:hover {
-           background-color: forestgreen;
-           border-radius: 50px;
-           border-color: forestgreen;
-        }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
-        #contact_map {
-            width: 400px;
-            height: 300px;
-        }
+.btn-group > button {
+    width: 250px;
+    height: 50px;
 
-        #contact_map iframe {
-            width: 100%;
-            height: 100%;
-        }
+    background-color: transparent;
+    color: forestgreen;
 
-         .review{
-             width: 100%;
-             background-position: center;
-             background-size: cover;
-             background-color: lightgrey;
+    border-radius: 50px;
+    border-color: forestgreen;
 
-             display: flex;
-             flex-direction: column;
-             align-items: center;
-             justify-content: center;
-         }
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
-          .mypost {
-            width: 95%;
-            max-width: 500px;
-            margin: 20px auto 0px auto;
-            padding: 20px;
-            box-shadow: 0px 0px 3px 0px gray;
+.btn-group > button:hover {
+    background-color: forestgreen;
+    border-radius: 50px;
+    border-color: forestgreen;
+}
 
-        }
-          .mybtns {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
+#contact_map {
+    width: 400px;
+    height: 300px;
+}
 
-            margin-top: 20px;
-        }
-        .mybtns > button {
-            margin-right: 10px;
-        }
+#contact_map iframe {
+    width: 100%;
+    height: 100%;
+}
 
-         .mycards {
-            margin: 20px auto 20px auto;
-            width: 95%;
-            max-width: 1200px;
-        }
+.review {
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-color: lightgrey;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mypost {
+    width: 95%;
+    max-width: 500px;
+    margin: 20px auto 0px auto;
+    padding: 20px;
+    box-shadow: 0px 0px 3px 0px gray;
+
+}
+
+.mybtns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 20px;
+}
+
+.mybtns > button {
+    margin-right: 10px;
+}
+
+.mycards {
+    margin: 20px auto 20px auto;
+    width: 95%;
+    max-width: 1200px;
+}
+
+#btn_submit {
+    background-color: #4b8f4d;
+    color: #fff;
+    border: transparent;
+    border-radius: 7px;
+}

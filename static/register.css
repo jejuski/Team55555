@@ -8,7 +8,6 @@
 button {
     background-color: #4b8f4d !important;
 }
-
 html {
     background-color: #eee;
 }
@@ -20,7 +19,6 @@ label {
     margin-left: 5px;
     line-height: 2.5;
 }
-
 input {
     width: 300px !important;
     margin: 5px 0;
@@ -48,19 +46,15 @@ input {
     background-color: #fff;
     box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.3);
 }
-
-.control {
+.control{
     width: 300px;
 }
-
-#userid {
+#userid{
     margin-left: 15px;
 }
-
-#uidcheck {
+#uidcheck{
 
 }
-
 .idinputbox {
     margin-left: 5px;
 }

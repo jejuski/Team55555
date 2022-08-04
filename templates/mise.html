@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>지하철역에서 살아남기</title>
+</head>
+<body>
+{% include 'header.html' %}
+<div class="container2">
+    <div id="gu-list">
+        <img src="https://www.me.go.kr/images/mamo/c7/dust_img02.jpg">
+        {% for row in rows %}
+            {% set gu_name = row["MSRSTE_NM"] %}
+            {% set gu_mise = row["IDEX_MVL"] %}
+            <div class="">
+                <span class="">{{ gu_name }}: {{ gu_mise|int }}</span>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>
