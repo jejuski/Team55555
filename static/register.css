@@ -1,0 +1,55 @@
+register.css
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
+
+* {
+    color: #fff;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+button {
+    /*background-color: #00a000 !important;*/
+}
+
+/*html {*/
+/*    background-color: #00a000;*/
+/*}*/
+
+label {
+    text-align: center;
+}
+
+input {
+    width: 300px !important;
+    margin: 5px 0;
+}
+
+.wrap {
+    text-align: center;
+}
+
+.main_title {
+    font-size: 50px;
+    font-weight: bold;
+    color: #000;
+    margin: auto;
+}
+
+.section {
+    padding: 0;
+    margin: auto;
+    width: 100%;
+    max-width: 480px;
+    /*border: 1px solid green;*/
+    /*border-radius: 10px;*/
+    background-color: #fff;
+    /*box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);*/
+}
+
+.idbox {
+    /*margin-left: 10px;*/
+}
+
+.idinputbox {
+    /*margin-left: 10px;*/
+}
