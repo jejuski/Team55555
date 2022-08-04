@@ -108,3 +108,8 @@ function showInfo() {
      })
  }
 
+ function logout() {
+    $.removeCookie('mytoken');
+    window.location.href = '/login'
+}
+

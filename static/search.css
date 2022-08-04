@@ -1,8 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
+@font-face {
+    font-family: 'MapoPeacefull';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoPeacefullA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 * {
-    font-family: 'Noto Sans KR', sans-serif;
-
+    font-family: 'MapoPeacefull',sans-serif;
 }
 
 body {
@@ -18,12 +22,14 @@ body {
     top: 0;
     z-index: 100;
     padding-top: 10px;
-    background-color: #fff;
+    background-color: seagreen;
+
 }
 
 .nick {
     float: left;
     margin-left: 30px;
+    color:white;
 }
 
 .navbox button {
@@ -31,6 +37,7 @@ body {
     border: transparent;
     margin-right: 5px;
     border-radius: 7px;
+    border: solid darkgreen 0.6px;
     padding: 5px 10px;
     background-color: #4b8f4d;
     color: #fff;
@@ -65,7 +72,10 @@ body {
     background-color: #4b8f4d;
     color: #fff;
 }
-
+#searchbox{
+    width: 60% !important;
+    margin-top: 50px;
+}
 .info {
     width: 100%;
 

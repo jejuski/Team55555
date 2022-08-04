@@ -20,13 +20,25 @@
 </head>
 
 <body>
-{% include 'header.html' %}
+
+<div class="navbox">
+    <div class="nick">
+        {{ nickname }} 님 환영합니다.
+    </div>
+    <div class="main">
+        <button onclick="window.location.href='/mise'">실시간 미세먼지</button>
+    </div>
+    <div class="logout">
+        <button onclick="logout()">로그아웃</button>
+    </div>
+</div>
+
 <div class="wrap">
     <div class="title">
         <h1>2호선에서 살아남기</h1>
     </div>
     <div class="info">
-        <div class="input-group mb-3">
+        <div class="input-group mb-3" id="searchbox">
             <input type="text" class="form-control" placeholder="찾으시는 역 이름을 검색해 주세요!" aria-label="Recipient's username"
                    aria-describedby="basic-addon2" id="search">
             <div class="input-group-append">
@@ -35,6 +47,7 @@
             </div>
             <img id="bg_img" src="../static/main2.png">
         </div>
+
     </div>
 
 </div>

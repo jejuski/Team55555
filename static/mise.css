@@ -1,0 +1,76 @@
+@font-face {
+    font-family: 'MapoPeacefull';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoPeacefullA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'MapoPeacefull', sans-serif;
+}
+
+body {
+    background-color: lightgrey !important;
+}
+
+.wrap {
+    margin-top: 35px;
+    width: 100%;
+    text-align: center;
+}
+
+.navbox button {
+    float: right;
+    border: transparent;
+    margin-right: 5px;
+    border-radius: 7px;
+    border: solid darkgreen 0.6px;
+    padding: 5px 10px;
+    background-color: #4b8f4d;
+    color: #fff;
+}
+
+.nick {
+    float: left;
+    margin-left: 30px;
+    color:white;
+}
+
+.navbox {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    padding-top: 10px;
+    background-color: seagreen;
+
+}
+
+.title {
+    position: relative;
+
+    width: 100%;
+    height: 200px;
+
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('http://www.ntoday.co.kr/news/photo/201812/64416_35312_1856.jpg');
+    background-position: center;
+    background-size: cover;
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 50px;
+}
+
+#gu-list img {
+    border-radius: 10px;
+    margin-bottom: 50px;
+    /*border: 1px solid #000;*/
+    box-shadow: 6px 7px 8px darkgray;
+}
