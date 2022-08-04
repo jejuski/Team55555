@@ -1,0 +1,170 @@
+@font-face {
+    font-family: 'MapoPeacefull';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoPeacefullA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'MapoPeacefull',sans-serif;
+}
+
+body {
+    background-color: lightgrey;
+    position: relative;
+}
+
+.navbox {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    padding-top: 10px;
+    background-color: seagreen;
+
+}
+
+.nick {
+    float: left;
+    margin-left: 30px;
+    color:white;
+}
+
+.navbox button {
+    float: right;
+    border: transparent;
+    margin-right: 5px;
+    border-radius: 7px;
+    border: solid darkgreen 0.6px;
+    padding: 5px 10px;
+    background-color: #4b8f4d;
+    color: #fff;
+}
+
+.title {
+    position: relative;
+
+    width: 100%;
+    height: 200px;
+
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('http://www.ntoday.co.kr/news/photo/201812/64416_35312_1856.jpg');
+    background-position: center;
+    background-size: cover;
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrap {
+    position: relative;
+    top: 35px;
+    left: 0;
+    margin-bottom: 100px;
+}
+
+#btn_search {
+    background-color: #4b8f4d;
+    color: #fff;
+}
+#searchbox{
+    width: 60% !important;
+    margin-top: 50px;
+}
+.info {
+    width: 100%;
+
+    background-position: center;
+    background-size: cover;
+    background-color: lightgrey;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-group > button {
+    width: 250px;
+    height: 50px;
+
+    background-color: transparent;
+    color: forestgreen;
+
+    border-radius: 50px;
+    border-color: forestgreen;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.btn-group > button:hover {
+    background-color: forestgreen;
+    border-radius: 50px;
+    border-color: forestgreen;
+}
+
+#contact_map {
+    width: 400px;
+    height: 300px;
+}
+
+#contact_map iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.review {
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-color: lightgrey;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mypost {
+    width: 95%;
+    max-width: 500px;
+    margin: 20px auto 0px auto;
+    padding: 20px;
+    box-shadow: 0px 0px 3px 0px gray;
+
+}
+
+.mybtns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 20px;
+}
+
+.mybtns > button {
+    margin-right: 10px;
+}
+
+.mycards {
+    margin: 20px auto 20px auto;
+    width: 95%;
+    max-width: 1200px;
+}
+
+#bg_img {
+    max-width: 100%;
+}
+
+.container2 {
+    margin: auto;
+    text-align: center;
+    width: 100%;
+}
